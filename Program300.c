@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+struct node
+{
+    int data;
+    struct node *next;
+
+};
+int main()
+{
+   struct node *first = NULL;
+   struct node obj1;
+   struct node obj2;
+   struct node obj3;
+   
+   obj1.data = 11;
+   obj2.data = 21;
+   obj3.data = 51;
+
+   obj1.next = &obj2;
+   obj2.next = &obj3;
+   obj3.next = NULL;
+
+   first = &obj1;
+
+   printf("%d\t",first->data);
+   printf("%d\t",first->next->data);
+   printf("%d\t",first->next->next->data);
+
+   //first  = 100
+   //frst -> next = 200
+   //first -> next -> next = 300
+   //&first  /= 50
+   
+    return 0;
+}
